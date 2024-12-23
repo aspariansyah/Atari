@@ -99,7 +99,7 @@ class GuestBookResource extends Resource
 
                 TextColumn::make('needs')
                     ->label('Needs')
-                    ->limit(60),
+                    ->limit(70),
 
                 TextColumn::make('check_in')
                     ->label('Check In')
