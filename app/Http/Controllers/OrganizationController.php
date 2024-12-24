@@ -32,6 +32,8 @@ class OrganizationController extends Controller
         return view('landing', compact('slug', 'organization', 'statusCounts', 'visits'));
     }
 
+
+
     public function processCheckOut($slug, $id)
     {
         // Ambil organisasi berdasarkan slug

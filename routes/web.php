@@ -22,6 +22,7 @@ Route::get('/{slug}/check', [GuestBookController::class, 'check'])->name('check'
 
 // tombol check-out
 Route::get('/{slug}/check-out', [GuestBookController::class, 'checkOutPage'])->name('check_out');
+
 // data checkout
 Route::post('/{slug}/checkout/{id}', [OrganizationController::class, 'processCheckOut'])->name('process_check_out');
 

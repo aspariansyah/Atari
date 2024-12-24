@@ -212,23 +212,23 @@ class GuestBookController extends Controller
 
         return view('check_out', compact('organization', 'approvedGuests', 'appointment'));
     }
-    public function processCheckOut($slug, $id)
-    {
-        // Ambil organisasi berdasarkan slug
-        $organization = Organization::where('slug', $slug)->firstOrFail();
+    // public function processCheckOut($slug, $id)
+    // {
+    //     // Ambil organisasi berdasarkan slug
+    //     $organization = Organization::where('slug', $slug)->firstOrFail();
 
-        // Ambil GuestBook berdasarkan ID
-        $guestBook = GuestBook::where('id', $id)
-            ->where('organization_id', $organization->id)
-            ->where('status', 'approved') // Pastikan status "approved"
-            ->whereDate('check_in', Carbon::today()) // Pastikan check_in hari ini
-            ->firstOrFail();
+    //     // Ambil GuestBook berdasarkan ID
+    //     $guestBook = GuestBook::where('id', $id)
+    //         ->where('organization_id', $organization->id)
+    //         ->where('status', 'approved') // Pastikan status "approved"
+    //         ->whereDate('check_in', Carbon::today()) // Pastikan check_in hari ini
+    //         ->firstOrFail();
 
-        // Ubah status menjadi "done"
-        $guestBook->status = 'done';
-        $guestBook->save();
+    //     // Ubah status menjadi "done"
+    //     $guestBook->status = 'done';
+    //     $guestBook->save();
 
-        return response()->json(['message' => 'Janji Anda sudah selesai!']);
-    }
+    //     return response()->json(['message' => 'Janji Anda sudah selesai!']);
+    // }
 
 }
